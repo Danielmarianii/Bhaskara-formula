@@ -29,25 +29,32 @@ public class Main {
 		int step2 = (int) step2delta;
 
 		double delta = Math.pow(b, 2.0) - 4 * a * c;
-
+		
+		
 		System.out.printf("delta= " + step1 + "-4" + "." + a_convert + "." + c_convert + "%n");
 		System.out.println("delta= " + step1 + " " + step2);
-		System.out.println("delta= " + (int) delta);
-		System.out.println();
+		
+		if (delta < 0) {
+			System.out.printf("delta= " + (int)delta + "%nImpossible to resolve with a negative delta.");
+		}
 
-		double x1 = (-b + Math.sqrt(delta)) / (2.0 * a);
-
-		System.out.println("x1= " + (-b_convert) + " " + (Math.sqrt(delta)) + " /2." + a_convert);
-		System.out.println("x1= " + ((-b_convert) + (Math.sqrt(delta))) + " /" + 2 * a_convert);
-		System.out.println("x1= " + x1);
-		System.out.println();
-
-		double x2 = (-b - Math.sqrt(delta)) / (2.0 * a);
-
-		System.out.println("x2= " + (-b_convert) + " " + -(Math.sqrt(delta)) + " /2." + a_convert);
-		System.out.println("x2= " + ((-b_convert) - (Math.sqrt(delta))) + " /" + 2 * a_convert);
-		System.out.println("x2= " + x2);
-
+		else {
+			System.out.println("delta= " + (int) delta);
+			System.out.println();
+	
+			double x1 = (-b + Math.sqrt(delta)) / (2.0 * a);
+	
+			System.out.println("x1= " + (-b_convert) + " " + (Math.sqrt(delta)) + " /2." + a_convert);
+			System.out.println("x1= " + ((-b_convert) + (Math.sqrt(delta))) + " /" + 2 * a_convert);
+			System.out.println("x1= " + x1);
+			System.out.println();
+	
+			double x2 = (-b - Math.sqrt(delta)) / (2.0 * a);
+	
+			System.out.println("x2= " + (-b_convert) + " " + -(Math.sqrt(delta)) + " /2." + a_convert);
+			System.out.println("x2= " + ((-b_convert) - (Math.sqrt(delta))) + " /" + 2 * a_convert);
+			System.out.println("x2= " + x2);
+		}
 		sc.close();
 
 	}
